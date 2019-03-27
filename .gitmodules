@@ -1,0 +1,3 @@
+[submodule "static/catharticons"]
+	path = static/catharticons
+	url = https://github.com/shenangopress/catharticons.git
