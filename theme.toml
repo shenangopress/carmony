@@ -1,0 +1,12 @@
+name = "Carmony"
+license = "MIT"
+licenselink = "https://github.com/shenangopress/carmony/blob/master/LICENSE"
+description = ""
+homepage = "https://github.com/shenangopress/carmony/"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Reuben L. Lillie"
+  homepage = "https://github.com/reubenlillie/"

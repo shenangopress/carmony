@@ -1,0 +1,10 @@
+{{- define "main" }}
+	{{- partial "content.html" . -}}
+	<ul class>
+		{{- range .Pages }}
+		<li>
+			<a href="{{.Permalink}}">{{.Title}}</a>
+		</li>	
+		{{- end }}
+	</ul>
+{{- end }}
