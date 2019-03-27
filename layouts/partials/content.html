@@ -1,5 +1,5 @@
 <article>
-	{{- with .Title }}
+	{{- if isset .Params "title" }}
 	<header>
 		<h1>{{ .Title }}</h1>
 	</header>
