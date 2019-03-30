@@ -1,3 +1,1 @@
-{{ if isset .Params "googlefonts.link" }}
-	<link href="{{.Site.Params.googlefonts}}" rel="stylesheet"> 
-{{ end }}
+<link href="{{ .Site.Params.fontLink | default "https://fonts.googleapis.com/css?family=Raleway:300,600&amp;subset=latin-ext" }}" rel="stylesheet"> 
