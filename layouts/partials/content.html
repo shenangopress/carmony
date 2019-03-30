@@ -1,8 +1,8 @@
 <article>
-	{{- if isset .Params "title" }}
+	{{ if isset .Params "title" -}}
 	<header>
 		<h1>{{ .Title }}</h1>
 	</header>
 	{{- end }}
-	{{ .Content }}
+	{{ .Content -}}
 </article>

@@ -1,0 +1,5 @@
+{{- if (fileExists "static/img/svg/header-logo.svg") }}
+	<a class="site-logo" href="/">{{ readFile "static/img/svg/header-logo.svg" | safeHTML }}</a>
+{{- else }}
+	<h1 class="primary-color"><a href="/">{{ .Site.Title }}</a></h1>
+{{- end -}}

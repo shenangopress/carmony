@@ -1,0 +1,26 @@
+{{- if .Site.Menus.about -}}
+	<nav>
+		<h2>About</h2>
+		<ul>
+			{{- $currentPage := . }}
+			{{- range .Site.Menus.about }}
+			<li>
+				<a href="{{ .URL | safeURL }}">{{ .Name | safeHTML }}</a>
+			</li>
+			{{- end }}
+		</ul>
+	</nav>
+{{- end -}}
+{{- if .Site.Menus.ministries }}
+	<nav>
+		<h2>Ministries</h2>
+		<ul>
+			{{- $currentPage := . }}
+			{{- range .Site.Menus.ministries }}
+			<li>
+				<a href="{{ .URL | safeURL }}">{{ .Name | safeHTML }}</a>
+			</li>
+			{{- end }}
+		</ul>
+	</nav>
+{{ end -}}

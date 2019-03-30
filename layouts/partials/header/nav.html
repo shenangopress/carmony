@@ -1,0 +1,12 @@
+{{- if .Site.Menus.header }}
+	<nav>
+		<ul>
+			{{- $currentPage := . }}
+			{{- range .Site.Menus.header }}
+			<li>
+				<a href="{{ .URL | safeURL }}">{{ .Name | safeHTML }}</a>
+			</li>
+			{{- end }}
+		</ul>
+	</nav>
+{{ end -}}
