@@ -1,0 +1,18 @@
+{{ if eq .Site.Params.contactForm.service "formspree" }}
+	{{ $formspree := print "https://formspree.io/" .Site.Params.email }}
+	<form method="POST" action="{{ print $formspree }}">
+	<input type="text" name="_gotcha" placeholder="Leave this field blank" style="display:none;visibility:hidden;" />
+{{ else if eq .Site.Params.contactForm.service "netlify" }}
+	<form name="{{ print "contact_" $.Page.Title | urlize }}" method="POST" netlify-honeypot="bot-field" netlify>
+	<input type="text" name="bot-field" placeholder="Leave this field blank" style="display:none;visibility:hidden;" />
+{{ end -}}
+	<input type="hidden" name="_subject" value="New Form Submission">
+	<input type="hidden" name="_next" value="/thanks/" />
+	<label for="name">Your name</label>
+	<input type="text" name="name" placeholder="{{ .Site.Params.contactForm.namePlaceholder | default "First Last" }}" required minlength=3 />
+	<label for="email">Your email</label>
+	<input name="email" type="email" placeholder="{{ .Site.Params.contactForm.emailPlaceholder | default "email@domain.com" }}" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/>
+	<label for="message">Your message</label>
+	<textarea name="message" placeholder="{{ .Site.Params.contactForm.messagePlaceholder | default "Your message here" }}" required rows=12></textarea>
+	<button type="submit">{{ .Site.Params.contactForm.submitText | default "Send" }}</button>
+</form>

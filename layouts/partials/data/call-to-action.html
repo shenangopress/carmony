@@ -1,0 +1,7 @@
+{{- if and .callToAction.url .callToAction.linkText }}
+<p class="call-to-action">
+	<a href="{{ .callToAction.url | default "/visit/" | safeURL }}">
+	{{- .callToAction.linkText | default "Plan Your Visit" | safeHTML -}}
+	</a>
+</p>
+{{ end -}}

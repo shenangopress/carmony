@@ -1,4 +1,8 @@
 <footer>
 	{{ partial "footer/menus.html" . -}}
-	{{ partial "footer/copyright.html" . -}}
+	<div class="span-all">
+		{{ partial "footer/copyright.html" . -}}
+		{{ partial "social.html" . -}}
+		{{ partial "footer/contact-info.html" . -}}
+	</div>
 </footer>

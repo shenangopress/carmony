@@ -1,11 +1,9 @@
 {{- if .Site.Menus.header }}
-	<nav>
+	<nav class="call-to-action">
 		<ul>
 			{{- $currentPage := . }}
 			{{- range .Site.Menus.header }}
-			<li>
-				<a href="{{ .URL | safeURL }}">{{ .Name | safeHTML }}</a>
-			</li>
+				{{ partial "menu-item.html" . -}}
 			{{- end }}
 		</ul>
 	</nav>
