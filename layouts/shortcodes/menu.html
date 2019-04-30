@@ -1,0 +1,14 @@
+{{ $currentPage := $.Page }}
+{{ $menuName := .Get 0 }}
+{{ $rangeData := index $.Site.Menus $menuName }}
+{{ if eq $menuName "social" }}
+	{{ partial "social.html" . -}}
+{{ else }}
+	<nav class="{{ $menuName }}">
+		<ul>
+			{{ range $rangeData -}}
+				{{ partial "menut-item.html" . -}}
+			{{ end -}}
+		</ul>
+	</nav>
+{{ end }}
