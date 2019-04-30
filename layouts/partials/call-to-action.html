@@ -1,6 +1,6 @@
 {{- if and $.Page.Params.callToAction.url $.Page.Params.callToAction.linkText }}
 <p class="call-to-action">
-	<a href="{{ $.Page.Params.callToAction.url | default "/visit/" | safeURL }}">
+<a href="{{ $.Page.Params.callToAction.url | default "/visit/" | relURL | safeURL }}">
 	{{- $.Page.Params.callToAction.linkText | default "Plan Your Visit" | safeHTML -}}
 	</a>
 </p>
