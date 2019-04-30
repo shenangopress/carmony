@@ -1,8 +1,9 @@
 <article>
-	{{ if isset .Params "title" -}}
 	<header>
+		{{ if and .Params.img.src .Params.img.alt -}}
+		<img src="/img/jpg/{{.Params.img.src | safeURL }}" alt="{{.Params.img.alt}}">
+		{{ end -}}
 		<h1>{{ .Title }}</h1>
 	</header>
-	{{- end }}
 	{{ .Content -}}
 </article>
