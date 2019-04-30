@@ -3,11 +3,23 @@
 <head>
 {{ partial "head/head.html" . -}}
 </head>
-<body class="{{.Kind}}">
-{{ partial "header/header.html" . -}}
-	<main id="site_main">
+<body class="{{ .Kind }} {{ .Title | urlize }}">
+	{{ if ne .Kind "home" -}}{{ partial "header/header.html" . -}}{{ end -}}
+	<main id="site_main" class="situation">
 	{{ block "main" . }}{{ end -}}
 	</main>
+	{{ if eq .Kind "home" -}}
+		<aside class="main-aside aside-one complication">
+			{{ block "aside-one" . -}}{{ end -}}
+		</aside>
+		<aside class="main-aside aside-two resolution">
+			{{ block "aside-two" . -}}{{ end -}}
+		</aside>
+		<aside class="main-aside aside-three celebration">
+			{{ block "aside-three" . -}}{{ end -}}
+		</aside>
+	{{ end -}}
 {{ partial "footer/footer.html" . -}}
+{{ partial "scripts/scripts.html" . -}}
 </body>
 </html>

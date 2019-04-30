@@ -1,10 +1,19 @@
 {{- define "main" }}
-	{{- partial "content.html" . -}}
-	<ul class>
+<article>
+	<header>
+		<h1>{{ .Title }}</h1>
+	</header>
+	<ul class="page-list">
 		{{- range .Pages }}
 		<li>
-			<a href="{{.Permalink}}">{{.Title}}</a>
+			{{ if and .Params.img.src .Params.img.alt -}}
+			<a href="{{.Permalink}}">
+				<img src="/img/jpg/{{.Params.img.src | safeURL}}" alt="{{.Params.img.alt}}">
+			{{ end -}}
+				<h2>{{.Title}}</h2>
+			</a>
 		</li>	
 		{{- end }}
 	</ul>
+	{{ .Content -}}
 {{- end }}
