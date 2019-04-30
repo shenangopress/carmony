@@ -1,7 +1,7 @@
 name = "Carmony"
 license = "MIT"
 licenselink = "https://github.com/shenangopress/carmony/blob/master/LICENSE"
-description = ""
+description = "A Hugo theme named after Byron M. Carmony"
 homepage = "https://github.com/shenangopress/carmony/"
 tags = []
 features = []
