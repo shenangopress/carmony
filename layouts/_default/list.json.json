@@ -1,0 +1,15 @@
+{{ define "response" -}}
+[
+{{ range $i, $e := .Data.Pages -}}
+	{{ if $i -}}, {{ end }}
+	{
+	"title": "{{ .Title }}",
+	"allDay": {{ .Params.allDay }},
+	"start": "{{ .Params.start }}",
+	"end": "{{ .Params.end }}",
+	"url": "{{ .Permalink }}",
+	"color": "{{ .Params.color }}"
+	}
+{{ end -}}
+]
+{{ end -}}

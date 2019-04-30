@@ -1,0 +1,8 @@
+{
+	"title": "{{ .Title }}",
+	"allDay": {{ .Params.allDay }},
+	"start": "{{ .Params.start }}",
+	"end": "{{ .Params.end }}",
+	"url": "{{ .Permalink }}",
+	"color": "{{ .Params.color }}"
+}

@@ -1,0 +1,9 @@
+{{ define "response" }}
+{{- $events := where .Data.Pages "Type" "events" -}}
+	test
+	[
+	{{ range $index, $e := $events }}
+		{{ if $index }}, {{ end }}{{ .Render "item" }}
+	{{ end }}
+	]
+{{ end }}
